@@ -1,10 +1,17 @@
 // Components
 import TaskBar from '../components/TaskBar.jsx';
+import ContentWindow from '../components/ContentWindow.jsx';
+
+const headerTitle = "projets.exe";
+const title = "Mes projets";
 
 const ProjectPage = () => {
     return (
         <>
-            <h1>Projets!</h1>
+            <ContentWindow
+                header={headerTitle}
+                title={title}
+            />
 
             <TaskBar />
         </>
