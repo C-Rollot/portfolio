@@ -1,6 +1,7 @@
 // Components
 import TaskBar from '../components/TaskBar.jsx';
 import ContentWindow from '../components/ContentWindow.jsx';
+import WelcomeSound from '../components/WelcomeSound.jsx';
 
 const headerTitle = 'bienvenue.exe';
 const mainTitle = 'Bienvenue sur mon portfolio!';
@@ -13,6 +14,7 @@ const HomePage = () => {
 
   return (
     <>
+        <WelcomeSound />
         <ContentWindow 
           header={headerTitle}
           title={mainTitle}

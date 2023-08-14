@@ -25,6 +25,7 @@ const TaskBar = () => {
 const [open, setOpen] = useState(false);
 const [time, setTime] = useState(new Date());
 
+// Horloge
 useEffect(() => {
     const intervalId = setInterval(() => {
         setTime(new Date());
