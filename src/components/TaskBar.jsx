@@ -1,4 +1,5 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
+
 
 // React95
 import { 
@@ -20,7 +21,24 @@ import {
 
 
 const TaskBar = () => {
+
 const [open, setOpen] = useState(false);
+const [time, setTime] = useState(new Date());
+
+useEffect(() => {
+    const intervalId = setInterval(() => {
+        setTime(new Date());
+    }, 1000);
+
+    return () => {
+        clearInterval(intervalId);
+    };
+}, []);
+
+const hours = time.getHours();
+const minutes = time.getMinutes();
+
+const currentTime = `${hours}${minutes}`;
 
     return (
         <AppBar>
@@ -65,7 +83,7 @@ const [open, setOpen] = useState(false);
             }}
             >
                 <Hourglass size={32} style={{ marginTop: '0.5rem' }} />
-                <Counter value='2301'></Counter>
+                <Counter value={currentTime}/>
             </Frame>
             </Toolbar>
         </AppBar>
